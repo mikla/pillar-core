@@ -21,13 +21,13 @@ class PartialMigration {
   var currentUp = new mutable.MutableList[String]()
   var currentDown: Option[mutable.MutableList[String]] = None
 
-  def rotateUp() = {
+  def rotateUp(): Unit = {
     upStages += currentUp.mkString("\n")
     upStages = upStages.filterNot(line => line.isEmpty)
     currentUp = new mutable.MutableList[String]()
   }
 
-  def rotateDown() = {
+  def rotateDown(): Unit = {
     currentDown match {
       case Some(currentDownLines) =>
         downStages match {
@@ -43,7 +43,6 @@ class PartialMigration {
   }
 
   def validate: Option[Map[String, String]] = {
-
     rotateUp()
     rotateDown()
 

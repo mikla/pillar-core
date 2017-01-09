@@ -22,6 +22,3 @@ overlays
 *.ipr
 .idea/
 .idea_modules/
-
-# git-commit-story gem
-.git-commit-story.yml
