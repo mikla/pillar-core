@@ -2,6 +2,7 @@ organization := "com.chrisomeara"
 name := "pillar-core"
 version := "3.0.SNAPSHOT"
 scalaVersion := "2.11.8"
+crossScalaVersions := Seq("2.10.6", "2.11.8")
 homepage := Some(url("https://github.com/comeara/pillar-core"))
 licenses := Seq("MIT license" -> url("http://www.opensource.org/licenses/mit-license.php"))
 libraryDependencies ++= Seq(
