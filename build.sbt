@@ -1,8 +1,8 @@
 organization := "com.chrisomeara"
-name := "pillar-lib"
+name := "pillar-core"
 version := "3.0.SNAPSHOT"
 scalaVersion := "2.11.8"
-homepage := Some(url("https://github.com/comeara/pillar-lib"))
+homepage := Some(url("https://github.com/comeara/pillar-core"))
 licenses := Seq("MIT license" -> url("http://www.opensource.org/licenses/mit-license.php"))
 libraryDependencies ++= Seq(
   "com.datastax.cassandra" % "cassandra-driver-core" % "3.0.0",
@@ -22,8 +22,8 @@ publishArtifact in Test := false
 pomIncludeRepository := { _ => false }
 pomExtra := (
   <scm>
-    <url>git@github.com:comeara/pillar-lib.git</url>
-    <connection>scm:git:git@github.com:comeara/pillar-lib.git</connection>
+    <url>git@github.com:comeara/pillar-core.git</url>
+    <connection>scm:git:git@github.com:comeara/pillar-core.git</connection>
   </scm>
   <developers>
     <developer>

@@ -1,10 +1,11 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
-import org.scalatest.{FunSpec, BeforeAndAfter}
-import org.scalatest.matchers.ShouldMatchers
 import java.io.File
-import org.scalatest.mock.MockitoSugar
 import java.util.Date
+
+import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.mock.MockitoSugar
+import org.scalatest.{BeforeAndAfter, FunSpec}
 
 class RegistrySpec extends FunSpec with BeforeAndAfter with ShouldMatchers with MockitoSugar {
   describe(".fromDirectory") {

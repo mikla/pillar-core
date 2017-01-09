@@ -1,6 +1,7 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
 import java.util.Date
+
 import com.datastax.driver.core.Session
 import com.datastax.driver.core.querybuilder.QueryBuilder
 

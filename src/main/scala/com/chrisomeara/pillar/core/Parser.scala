@@ -1,7 +1,8 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
-import java.util.Date
 import java.io.InputStream
+import java.util.Date
+
 import scala.collection.mutable
 import scala.io.Source
 

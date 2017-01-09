@@ -1,4 +1,4 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
 object ReplicationOptions {
   val default = new ReplicationOptions(Map("class" -> "SimpleStrategy", "replication_factor" -> 3))

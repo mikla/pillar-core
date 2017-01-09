@@ -1,9 +1,10 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
-import org.scalatest.{FunSpec, BeforeAndAfter}
-import org.scalatest.matchers.ShouldMatchers
 import java.io.{ByteArrayInputStream, FileInputStream}
 import java.util.Date
+
+import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.{BeforeAndAfter, FunSpec}
 
 class ParserSpec extends FunSpec with BeforeAndAfter with ShouldMatchers {
   describe("#parse") {

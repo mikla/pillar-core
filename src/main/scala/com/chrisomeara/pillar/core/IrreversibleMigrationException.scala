@@ -1,4 +1,4 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
 class IrreversibleMigrationException(migration: IrreversibleMigration)
   extends RuntimeException(s"Migration ${migration.authoredAt.getTime}: ${migration.description} is not reversible")

@@ -1,4 +1,4 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
 import com.datastax.driver.core.querybuilder.QueryBuilder
 import com.datastax.driver.core.{Metadata, Session}

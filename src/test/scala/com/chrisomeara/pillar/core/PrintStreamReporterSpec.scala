@@ -1,11 +1,10 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
-import com.datastax.driver.core.Session
-import org.scalatest._
-import org.scalatest.matchers.ShouldMatchers
 import java.io.{ByteArrayOutputStream, PrintStream}
 import java.util.Date
 
+import com.datastax.driver.core.Session
+import org.scalatest._
 import org.scalatest.mock.MockitoSugar
 
 class PrintStreamReporterSpec extends FunSpec with MockitoSugar with Matchers with OneInstancePerTest {

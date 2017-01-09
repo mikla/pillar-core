@@ -1,9 +1,11 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
+
+import java.util.Date
 
 import com.datastax.driver.core.Session
 import com.datastax.driver.core.querybuilder.QueryBuilder
+
 import scala.collection.JavaConversions
-import java.util.Date
 
 object AppliedMigrations {
   def apply(session: Session, registry: Registry): AppliedMigrations = {

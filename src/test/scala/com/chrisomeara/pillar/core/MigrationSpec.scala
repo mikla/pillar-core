@@ -1,8 +1,9 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
+
+import java.util.Date
 
 import org.scalatest.FunSpec
 import org.scalatest.matchers.ShouldMatchers
-import java.util.Date
 import org.scalatest.mock.MockitoSugar
 
 class MigrationSpec extends FunSpec with ShouldMatchers with MockitoSugar {

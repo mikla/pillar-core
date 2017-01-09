@@ -1,4 +1,4 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
 import java.util.Date
 

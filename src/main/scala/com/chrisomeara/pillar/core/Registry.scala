@@ -1,7 +1,7 @@
-package com.chrisomeara.pillar
+package com.chrisomeara.pillar.core
 
+import java.io.{File, FileInputStream}
 import java.util.Date
-import java.io.{FileInputStream, File}
 
 object Registry {
   def apply(migrations: Seq[Migration]): Registry = {
