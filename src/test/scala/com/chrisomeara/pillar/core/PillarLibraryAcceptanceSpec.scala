@@ -121,9 +121,9 @@ class PillarLibraryAcceptanceSpec extends FeatureSpec with GivenWhenThen with Be
       When("the migrator destroys the keyspace")
 
       Then("the migrator throws an exception")
-      evaluating {
+      assertThrows[Throwable] {
         migrator.destroy(session, keyspaceName)
-      } should produce[Throwable]
+      }
     }
   }
 

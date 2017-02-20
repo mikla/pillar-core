@@ -3,10 +3,9 @@ package com.chrisomeara.pillar.core
 import java.io.{ByteArrayInputStream, FileInputStream}
 import java.util.Date
 
-import org.scalatest.matchers.ShouldMatchers
-import org.scalatest.{BeforeAndAfter, FunSpec}
+import org.scalatest.{BeforeAndAfter, FunSpec, Matchers}
 
-class ParserSpec extends FunSpec with BeforeAndAfter with ShouldMatchers {
+class ParserSpec extends FunSpec with BeforeAndAfter with Matchers {
   describe("#parse") {
     describe("1370028262000_creates_events_table.cql") {
       val migrationPath = "src/test/resources/pillar/migrations/faker/1370028262000_creates_events_table.cql"

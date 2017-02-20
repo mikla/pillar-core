@@ -3,11 +3,10 @@ package com.chrisomeara.pillar.core
 import java.io.File
 import java.util.Date
 
-import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.mock.MockitoSugar
-import org.scalatest.{BeforeAndAfter, FunSpec}
+import org.scalatest.{BeforeAndAfter, FunSpec, Matchers}
 
-class RegistrySpec extends FunSpec with BeforeAndAfter with ShouldMatchers with MockitoSugar {
+class RegistrySpec extends FunSpec with BeforeAndAfter with Matchers with MockitoSugar {
   describe(".fromDirectory") {
     describe("without a reporter parameter") {
       describe("with a directory that exists and has migration files") {
