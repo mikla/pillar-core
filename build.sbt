@@ -1,6 +1,6 @@
 organization := "com.chrisomeara"
 name := "pillar-core"
-version := "3.0.SNAPSHOT"
+version := "3.0.0"
 scalaVersion := "2.12.1"
 crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.1")
 homepage := Some(url("https://github.com/comeara/pillar-core"))
