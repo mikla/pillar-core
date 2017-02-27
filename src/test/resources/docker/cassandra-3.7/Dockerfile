@@ -1,3 +1,3 @@
 FROM cassandra:3.7
 
-ADD contents /
+ADD config/* /etc/cassandra/
