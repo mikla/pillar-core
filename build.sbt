@@ -1,14 +1,14 @@
 organization := "com.chrisomeara"
 name := "pillar-core"
-version := "3.0.0"
-scalaVersion := "2.12.1"
-crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.1")
+version := "3.0.1"
+scalaVersion := "2.13.1"
 homepage := Some(url("https://github.com/comeara/pillar-core"))
 licenses := Seq("MIT license" -> url("http://www.opensource.org/licenses/mit-license.php"))
 libraryDependencies ++= Seq(
   "com.datastax.cassandra" % "cassandra-driver-core" % "3.0.0",
   "org.mockito" % "mockito-core" % "1.9.5" % "test",
-  "org.scalatest" %% "scalatest" % "3.0.1" % "test",
+  "org.scalatest" %% "scalatest" % "3.1.0" % "test",
+  "org.scalatestplus" %% "scalatestplus-mockito" % "1.0.0-M2" % "test",
   "org.slf4j" % "slf4j-simple" % "1.7.22" % "test"
 )
 publishMavenStyle := true

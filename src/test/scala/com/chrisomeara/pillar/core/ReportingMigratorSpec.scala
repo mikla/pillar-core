@@ -3,7 +3,7 @@ package com.chrisomeara.pillar.core
 import com.datastax.driver.core.Session
 import org.mockito.Mockito._
 import org.scalatest.FunSpec
-import org.scalatest.mock.MockitoSugar
+import org.scalatestplus.mockito.MockitoSugar
 
 class ReportingMigratorSpec extends FunSpec with MockitoSugar {
   val reporter = mock[Reporter]

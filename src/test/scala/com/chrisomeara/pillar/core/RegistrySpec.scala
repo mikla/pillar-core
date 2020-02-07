@@ -3,7 +3,7 @@ package com.chrisomeara.pillar.core
 import java.io.File
 import java.util.Date
 
-import org.scalatest.mock.MockitoSugar
+import org.scalatestplus.mockito.MockitoSugar
 import org.scalatest.{BeforeAndAfter, FunSpec, Matchers}
 
 class RegistrySpec extends FunSpec with BeforeAndAfter with Matchers with MockitoSugar {
