@@ -1,4 +1,4 @@
-organization := "com.chrisomeara"
+organization := "io.github.mikla"
 name := "pillar-core"
 version := "3.0.1"
 scalaVersion := "2.13.1"
