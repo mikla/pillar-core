@@ -5,14 +5,14 @@ import java.util.Date
 import com.datastax.driver.core.Session
 import com.datastax.driver.core.querybuilder.QueryBuilder
 
-import scala.collection.JavaConversions
+import scala.jdk.CollectionConverters._
 
 object AppliedMigrations {
   def apply(session: Session, registry: Registry): AppliedMigrations = {
     val results = session.execute(QueryBuilder.select("authored_at", "description").from("applied_migrations"))
-    new AppliedMigrations(JavaConversions.asScalaBuffer(results.all()).map {
+    new AppliedMigrations(results.all().asScala.map {
       row => registry(MigrationKey(row.getTimestamp("authored_at"), row.getString("description")))
-    })
+    }.toSeq)
   }
 }
 

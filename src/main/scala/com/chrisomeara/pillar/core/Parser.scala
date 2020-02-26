@@ -16,23 +16,23 @@ class PartialMigration {
   var description: String = ""
   var authoredAt: String = ""
 
-  var upStages = new mutable.MutableList[String]()
-  var downStages : Option[mutable.MutableList[String]] = None
+  var upStages = new mutable.ArrayDeque[String]()
+  var downStages : Option[mutable.ArrayDeque[String]] = None
 
-  var currentUp = new mutable.MutableList[String]()
-  var currentDown: Option[mutable.MutableList[String]] = None
+  var currentUp = new mutable.ArrayDeque[String]()
+  var currentDown: Option[mutable.ArrayDeque[String]] = None
 
   def rotateUp(): Unit = {
     upStages += currentUp.mkString("\n")
     upStages = upStages.filterNot(line => line.isEmpty)
-    currentUp = new mutable.MutableList[String]()
+    currentUp = new mutable.ArrayDeque[String]()
   }
 
   def rotateDown(): Unit = {
     currentDown match {
       case Some(currentDownLines) =>
         downStages match {
-          case None => downStages = Some(new mutable.MutableList[String]())
+          case None => downStages = Some(new mutable.ArrayDeque[String]())
           case Some(_) =>
         }
 
@@ -95,14 +95,14 @@ class Parser {
         state = ParsingUp
       case MatchAttribute("down", _) =>
         inProgress.rotateUp()
-        inProgress.currentDown = Some(new mutable.MutableList[String]())
+        inProgress.currentDown = Some(new mutable.ArrayDeque[String]())
         state = ParsingDown
       case MatchAttribute("stage", number) =>
         state match {
           case ParsingUp => state = ParsingUpStage
           case ParsingUpStage => inProgress.rotateUp()
           case ParsingDown => state = ParsingDownStage
-          case ParsingDownStage => inProgress.rotateDown(); inProgress.currentDown = Some(new mutable.MutableList[String]())
+          case ParsingDownStage => inProgress.rotateDown(); inProgress.currentDown = Some(new mutable.ArrayDeque[String]())
         }
       case cql =>
         if (!cql.isEmpty) {
@@ -121,11 +121,11 @@ class Parser {
         inProgress.downStages match {
           case Some(downLines) =>
             if (downLines.forall(line => line.isEmpty)) {
-              Migration(inProgress.description, new Date(inProgress.authoredAtAsLong), inProgress.upStages, None)
+              Migration(inProgress.description, new Date(inProgress.authoredAtAsLong), inProgress.upStages.toSeq, None)
             } else {
-              Migration(inProgress.description, new Date(inProgress.authoredAtAsLong), inProgress.upStages, Some(downLines))
+              Migration(inProgress.description, new Date(inProgress.authoredAtAsLong), inProgress.upStages.toSeq, Some(downLines.toSeq))
             }
-          case None => Migration(inProgress.description, new Date(inProgress.authoredAtAsLong), inProgress.upStages)
+          case None => Migration(inProgress.description, new Date(inProgress.authoredAtAsLong), inProgress.upStages.toSeq)
         }
     }
   }

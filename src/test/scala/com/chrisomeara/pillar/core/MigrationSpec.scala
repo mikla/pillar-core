@@ -3,7 +3,7 @@ package com.chrisomeara.pillar.core
 import java.util.Date
 
 import org.scalatest.{FunSpec, Matchers}
-import org.scalatest.mock.MockitoSugar
+import org.scalatestplus.mockito.MockitoSugar
 
 class MigrationSpec extends FunSpec with Matchers with MockitoSugar {
   describe(".apply") {
